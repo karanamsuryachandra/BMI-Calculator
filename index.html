@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Body Mass Index (BMI) Prediction</title>
+ </head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css family=Raleway">
+<style>
+body,h1, h3 {font-family: "Raleway", sans-serif; text-align:center; color:black}
+body, html {height: 100%}
+body
+{
+background-image:url("https://www.goethe.de/resources/files/jpg916/menschrobot_logo-formatkey-jpg-w983.jpg");
+/* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<body>
+ <div class="login">
+	<h1> Body Mass Index (BMI) Calculator </h1>
+     <h1> using machine learning </h1>
+	<h3> Please Enter - Height in cms and Weight in Kgs</h3>
+<!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <input type="text" name="Height" placeholder="height in centimeters" required="required" />
+	<input type="text" name="Weight" placeholder="weight in kilograms" required="required" />
+	<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+	</form>
+<br>
+<br>
+   {{prediction_text}}
+ </div>
+</body>
+</html>
